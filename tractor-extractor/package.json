@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "adm-zip": "^0.5.12",
+    "linkedom": "^0.18.0",
+    "pdfjs-dist": "^4.2.67",
+    "unpdf": "^0.10.1",
+    "vitest": "^1.6.0"
+  }
+}
