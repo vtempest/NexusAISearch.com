@@ -2,7 +2,7 @@
 <img src="https://i.imgur.com/4GOOM9s.jpeg"> 
 </p>
 
-## NexusAISearch AI Research Agent
+## NexusAISearch.com 
 
 * LangChain: Research, Extract, Vectorize, Semantic Compare, Rerank, Summarize, Answer, Follow-up
 * Save Page to Knowledge Base -- save main content of any webpage in your research browsing to build memory base for LLMs
