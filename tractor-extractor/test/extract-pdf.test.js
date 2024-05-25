@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import extractPDF from "../extract-pdf";
+import fs from 'fs';
 
 var urls = [
   "http://wpc.4d7d.edgecastcdn.net/004D7D/mkt/document/Newcomers-Guide-v1.2.2_Original.pdf",
@@ -18,9 +19,11 @@ describe("extract-pdf", () => {
  
   
   it("parse pdf from file", async () => {
-    var url = "./test/example.pdf";
+    var url = "./test/input/complex.pdf";
     var text = await extractPDF(url, { showPageNumbers: 1 });
-    // console.log(text);
-    expect(text).toBeTruthy();
+    // console.log(text); 
+
+    fs.writeFileSync('./test/output/complex.html', JSON.stringify(text, null, 2)); 
+    expect(text).toBeDefined();
   });
 });

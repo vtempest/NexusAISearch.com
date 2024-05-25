@@ -143,8 +143,8 @@ const ChatWindow = () => {
   const initialMessage = searchParams.get('q');
 
   const [isReady, setIsReady] = useState(1); //change to false
-  const ws = useSocket(process.env.NEXT_PUBLIC_WS_URL!, setIsReady);
-
+  // const ws = useSocket(process.env.NEXT_PUBLIC_WS_URL!, setIsReady);
+  var ws = {};
   const [chatHistory, setChatHistory] = useState<[string, string][]>([]);
   const [messages, setMessages] = useState<Message[]>([]);
   const messagesRef = useRef<Message[]>([]);

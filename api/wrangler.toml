@@ -2,7 +2,7 @@
 name = "nexus-ai-search-api"
 compatibility_date = "2024-05-20"
 node_compat = true
-main = "api/app.ts"
+main = "./app.ts"
 
 [vars]
 GROQ = "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"

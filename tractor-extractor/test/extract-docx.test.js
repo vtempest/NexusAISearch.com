@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import extractDOCX from "../extract-docx";
 import fs  from 'fs'
 
-var doc = "./test/example.docx"
+var doc = "./example.docx"
 
 describe("extract-docx", () => {
 

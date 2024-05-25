@@ -15,11 +15,10 @@ export default async function extractPDF(
   pdfPath,
   { showPageNumbers = true, 
     cleanLines = true, 
-    inferHeadings = true,
-    removePageHeaders = true
+    removePageHeaders = false
   }
 ) {
-  try {
+  // try {
     //load file or download url into memory buffer
     var buffer = pdfPath.startsWith("http")
       ? await (await fetch(pdfPath)).arrayBuffer()
@@ -44,47 +43,33 @@ export default async function extractPDF(
       pages.push(content);
     }
 
-    //TODO remove redundant headers
+    //TODO remove redundant headers and page numbers
     if (removePageHeaders && pages.length > 2){
       //test first 4 ranges in each page for a redundant header
       for (let rangeIndex = 0; rangeIndex < 3; rangeIndex++) {
         var headerMatches=0, pageNumMatches = 0,
-        matchedHeaderIndex, pageNumIndex, lastHeader = "";
+        matchedHeaderIndex, matchedPageNumIndex, lastHeader = "";
         pages.forEach((page, pageNum) => {
           var range =  page[rangeIndex];
+          if (!range) return;
 
           // detect header  if same range in same index as prior page, 
           if (range?.length > 8  && pageNum >= 1 
             && range == pages[pageNum-1][rangeIndex]) {
-            headerMatches++;
-            matchedHeaderIndex = rangeIndex;
+
+              pages[pageNum][rangeIndex] = "";
             console.log("Removing Header: ", range);
           }
 
-          if (range.length < 4 && parseInt(range) && pageNum >= 1 
+          if (range && range.length < 4 && parseInt(range) && pageNum >= 1 
             && parseInt(range)-1==parseInt(pages[pageNum-1][rangeIndex])){
            
-            pageNumMatches++;
-            matchedHeaderIndex = rangeIndex;
+            pages[pageNum][rangeIndex] = "";
             console.log("Removing PageNums: ", range);
           }
 
           lastHeader = range;
         })
-
-        //remove header if it appears on 90% of pages
-        if (headerMatches/pages.length >  0.6){
-        //  console.log("Removing Header: ", pages[pages.length-2][matchedHeaderIndex]);
-          pages.forEach(page => page[matchedHeaderIndex] == "$$$$$$$$$$$$$$$")
-        }
-        if (headerMatches/pages.length >  0.6){
-          //  console.log("Removing Header: ", pages[pages.length-2][matchedHeaderIndex]);
-            pages.forEach(page => page[matchedHeaderIndex] == "$$$$$$$$$$$$$$$")
-          }
-        // pages.forEach(page => console.log(page.slice(0, 6)))
-
-          // pages.forEach(page => page.splice(rangeIndex, 1)
-      
       }
 
     }
@@ -93,34 +78,13 @@ export default async function extractPDF(
     var text = pages
       .map((content, pageNumber) => {
         content = content.reduce((all, range) => {
+
           //hyphenated words at end of line or column
-          if (range.endsWith("-")) return all + range.slice(0, -1);
+          if (cleanLines && range.endsWith("-")) return all + range.slice(0, -1);
 
           // Merge unwanted mid-sentence line breaks
-          if ('.?!"”\n'.includes(range[range.length - 1]))
+          if (cleanLines && '.?!"”\n'.includes(range[range.length - 1]))
             return all + range + "\n\n";
-
-          //if range is title caps, its a block header -- matches only partial line
-          if (
-            inferHeadings &&
-            range.length > 10 &&
-            range
-              .split(" ")
-              .every(
-                (word) =>
-                  word.length < 4 ||
-                  word == word[0].toUpperCase() + word.slice(1).toLowerCase()
-              )
-          )
-            return all + `<h2>${range}</h2>\n\n`;
-
-          //if range is all caps, it's a section header
-          if (
-            inferHeadings &&
-            range.toUpperCase() === range &&
-            range.length > 6
-          )
-            return all + `<h1>${range}</h1>\n\n`;
 
           return all + range + " ";
         }, "");
@@ -128,18 +92,13 @@ export default async function extractPDF(
         //clean up
         if (cleanLines)
           content = content
-            //hyphenated words at end of line or column
-            // .replaceAll(/\n*-\n+/g, "")
-            // // Merge unwanted mid-sentence line breaks, avoid All-Caps Section Headers
-            // .replaceAll(/([^.?!"”\n]+)\n+/g, "$1 ")
-            // numbered lists 1. 2. 3. etc
-            // .replaceAll(/([0-9]+)\.\n+/g, "$1. ")
             // trailing spaces or breaks
-            // .replaceAll(/\n{2,}/g, "\n\n")
+            .replaceAll(/\n{2,}/g, "\n\n")
             .replaceAll(/ +/g, " ");
 
         // Add page numbers if requested
-        if (showPageNumbers) content = `[ ${pageNumber + 1} ]\n` + content;
+        if (showPageNumbers) 
+          content = `[ ${pageNumber + 1} ]\n` + content;
 
         return content;
       })
@@ -147,7 +106,7 @@ export default async function extractPDF(
 
     return text;
     // return   { text, author, title, date, pageCount: pages.length }; //pages.join("\n");
-  } catch (e) {
-    throw new Error(e.message);
-  }
+  // } catch (e) {
+  //   throw new Error(e.message);
+  // }
 }

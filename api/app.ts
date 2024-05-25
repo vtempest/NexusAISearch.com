@@ -1,4 +1,4 @@
-import { startWebSocketServer } from './websocket';
+// import { startWebSocketServer } from './websocket';
 
 import configRouter from './routes/config';
 import imagesRouter from './routes/images';
@@ -13,12 +13,16 @@ import { trimTrailingSlash } from 'hono/trailing-slash'
 import { prettyJSON } from 'hono/pretty-json'
 import { logger } from 'hono/logger'
 import { upgradeWebSocket } from 'hono/cloudflare-workers'
+import { serveStatic } from '@hono/node-server/serve-static'
+
+
+// app.use('/home/*', serveStatic({ root: '../ui/out' }))
 
 
 // middleware
 const app = new Hono();
 app.use(trimTrailingSlash())
-app.use(prettyJSON()) // With options: prettyJSON({ space: 4 })
+app.use(prettyJSON({ space: 4 })) 
 app.use(logger())
 
   
@@ -40,7 +44,12 @@ app.get(
   '/ws',
   upgradeWebSocket((c) => {
     return {
-      onMessage(event, ws) {
+      async onMessage(event, ws) {
+
+        var message = event.data;
+
+        // await handleMessage(message, ws, llm, embeddings)
+
         
         
         console.log(`Message from client: ${event.data}`)
@@ -56,7 +65,12 @@ app.get(
 )
 
 
-// startWebSocketServer();
+
+
+// const server =  serve(app )
+
+
+// startWebSocketServer(server);
 
 
 export default app;
