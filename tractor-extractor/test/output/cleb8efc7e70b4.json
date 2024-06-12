@@ -1,0 +1,362 @@
+{
+  "title": "Use TextRank to Extract Most Important Sentences in Article",
+  "author": "@ceshine_en",
+  "date": "2019-04-18",
+  "source": "Medium",
+  "html": "<section><figure><img /><a href=\"https://pixabay.com/en/helicopter-mountains-flight-2966569/\">Photo Credit</a></figure><p>I’m trying to build a NLP system that can automatically highlight the important part of an article to help people to read long articles. The common practice is to start with a simple baseline model that is useful enough, and then incrementally improves the performance. The TextRank algorithm[1], which I also used as a baseline in a text summarization system, is a natural fit to this task.</p><h2>Available Implementations</h2><p>There are multiple open-sourced Python implementations of TextRank algorithm, including <a href=\"https://github.com/ceteri/pytextrank\">ceteri/pytextrank</a>, <a href=\"https://github.com/davidadamojr/TextRank\">davidadamojr/TextRank</a>, and <a href=\"https://github.com/summanlp/textrank\">summanlp/textrank</a>. They all come with different flavors of text pre-processings (for example, PyTextRank uses parts-of-speech tags to filter tokens, while summanlp’s version uses a list of stopwords), and output only the extracted sentences.</p><p>I need some ways to bypass the text pre-processing function so I can use my own pipeline for different languages such as Chinese and Japanese. And I need to get the internal data structure to be able to visualize it.</p><p>After some investigations, I decided that <a href=\"https://github.com/summanlp/textrank\">summanlp/textrank</a> was the easiest one for me to customize/extend (I really liked the abstraction of that project.).</p><p>The code used in this post has been open-sourced on Github, and comes with a simple web interface:</p><h2>How does TextRank work?</h2><p>We’re going to focus on the sentence extraction part of the TextRank algorithm (i.e. ignoring the keyword extraction part). <a href=\"https://www.quora.com/What-is-a-simple-but-detailed-explanation-of-Textrank\">This answer on Quora did a great job explaining the intuition behind the algorithm</a>, as quoted below:</p><blockquote><p>What TextRank does is very simple: <strong>it finds how similar each sentence is to all other sentences in the text</strong>. <strong>The most important sentence is the one that is most similar to all the others</strong>, with this in mind the similarity function should be oriented to the semantic of the sentence, cosine similarity based on a bag of words approach can work well and BM25/BM25+ work really nicely for TextRank.</p></blockquote><p>Here are two good tutorials on TextRank algorithm: <a href=\"https://joshbohde.com/blog/document-summarization/\">Document Summarization using TextRank</a>, <a href=\"https://nlpforhackers.io/textrank-text-summarization/\">TextRank for Text Summarization</a>. Please refer to them, or even better, read the paper[1] if you want to know more about TextRank.</p><h2>An Example</h2><p>We’re going to use the texts from the first two sections of the<a href=\"https://www.wikiwand.com/en/Neo-Nazism\"> “Neo-Nazism” entry on Wikipedia </a>as an example to demonstrate the web interface and to visualize the associated internal graph created by TextRank.</p><p>An static snapshot of the web interface can be found here:</p><figure><img /></figure><p>The texts were split into 10 sentences, so there are 10 x 9 / 2 = 45 potential undirected connetctions between them. Only 29 of them has a weight larger than 0 (i.e. the sentences at both end of the edges are somewhat similar to each other). The similarity measure used here is the same as the original paper (something very similar to the <a href=\"https://www.wikiwand.com/en/Jaccard_index\">Jaccard similarity coefficient</a>):</p><figure><img />Similarity function used. Source: [2]</figure><p>However, the author <a href=\"https://github.com/summanlp/textrank\">summanlp/textrank</a> provided several other measures in various branches of the repository, such as BM25+ with correction.</p><h2>The Internal Graph</h2><figure><img />The graph constructed by TextRank (P1 S4 means the fourth sentence in the first paragraph)</figure><p>The above plot actually has some limited interactivity. Please visit the static snapshot page, or clone and run the code from your machine to make use of it.</p><p>We can see that the first sentence of the seventh paragraph has some strong similarity with P1S1, P1S4 and P5S1 nodes. It implies that the ideas in that sentences had been (partly or fully) mentioned several times in the article, therefore it is most likely the centerpiece of the article.</p><p>(Note: the paragraph count includes empty lines.)</p><h2>The Results</h2><figure><img />The texts with the most two important sentences highlighted</figure><p>Looks reasonable enough. The highlighted sentences very broadly defines Neo-Nazism. Terms used in them frequently overlap the terms in other sentences.</p><h2>Future Work</h2><p>It appears that we already have a decent baseline for Wikipedia-like articles. However, I did not include a proper stop list in the program, so it might work terribly with more casual texts. Using POS tags could actually be a better idea as it is more robust than a fixed stop word list.</p><p>Bypassing the built-in text pre-processing procedure has not been tried yet. It is required for the program to be able to process other languages that is not supported by <code>SnowballStemmer</code>. We need to create <code>SyntacticUnit</code> objects from raw texts by ourselves.</p><h2>The End</h2><p>Thank you for reading! As TextRank is a fairly “old” algorithm by today’s standard, I wasn’t very sure how much efforts I need to put in to explain the algorithm. In the end I seem to have skipped most of the details.</p><p>The goal here is to provide a big picture and an example of how everything comes together for someone who is trying to quick build a baseline. I hope you find this post useful and worth your time (please give it some claps if you do). Thanks again for reading!</p><h2>20181212 Update</h2><p>I’m working on Chinese support, and have uploaded a very early version to the Github repo. You can check this file <a href=\"https://github.com/ceshine/textrank_demo/blob/5c4bbd72e10cc2ca9f2c7dfa3a5efd0cbecd7e45/text_cleaning_zh.py\"><em>text_cleaning_zh.py</em></a><em> </em>for an example of a<strong> custom pre-processing pipeline with a POS tag filter</strong>. I’d probably also add Japanese support as well if I can find a good and free Japanese POS tag filter.</p><figure><img />A snapshot of the Chinese support (WIP)</figure><h2>References:</h2><ol><li>Mihalcea, R., Tarau, P.: <a href=\"http://www.aclweb.org/anthology/W04-3252\">“Textrank: Bringing order into texts”</a>. In: Lin, D., Wu, D. (eds.) Proceedings of EMNLP 2004. pp. 404–411. Association for Computational Linguistics, Barcelona, Spain. July 2004.</li><li>Barrios, F., López, F., Argerich, L., Wachenchauzer, R.: <a href=\"https://arxiv.org/pdf/1602.03606.pdf\">“Variations of the Similarity Function of TextRank for Automated Summarization”</a>. Anales de las 44JAIIO. Jornadas Argentinas de Informática, Argentine Symposium on Artificial Intelligence, 2015.</li></ol><p>(This post is also published <a href=\"https://blog.ceshine.net/post/use-textrank-to-extract-most-important-sentences-in-article/\">on my personal blog</a>.)</p></section>",
+  "image": "https://miro.medium.com/v2/resize:fit:1200/1*0aJebtztCdf2RPbsIEEmEg.jpeg",
+  "word_count": 904,
+  "keyphrases": [
+    {
+      "value": "TextRank",
+      "matchesStarts": "618, 651, 1180, 1696, 2096, 2205, 2225, 2350, 2600, 3180, 3363, 4866, 5833, 6128",
+      "count": 14,
+      "weight": 4.1545821847147
+    },
+    {
+      "value": "sentences",
+      "matchesStarts": "878, 1757, 1782, 1834, 1983, 2731, 2872, 3396, 3758, 4027, 4099, 4199",
+      "count": 12,
+      "weight": 3.561070444041171
+    },
+    {
+      "value": "example",
+      "matchesStarts": "732, 2372, 2501, 5116, 5534",
+      "count": 5,
+      "weight": 1.4837793516838214
+    },
+    {
+      "value": "TextRank algorithm",
+      "matchesStarts": "321, 541, 1502, 2151",
+      "count": 4,
+      "weight": 1.187023481347057
+    },
+    {
+      "value": "article",
+      "matchesStarts": "138, 174, 3826, 3886",
+      "count": 4,
+      "weight": 1.187023481347057
+    },
+    {
+      "value": "similarity function",
+      "matchesStarts": "1921, 3099, 6105",
+      "count": 3,
+      "weight": 1
+    },
+    {
+      "value": "algorithm",
+      "matchesStarts": "1644, 4893, 4992",
+      "count": 3,
+      "weight": 1
+    },
+    {
+      "value": "web interface",
+      "matchesStarts": "1385, 2528, 2645",
+      "count": 3,
+      "weight": 1
+    },
+    {
+      "value": "baseline",
+      "matchesStarts": "367, 4281, 5200",
+      "count": 3,
+      "weight": 1
+    },
+    {
+      "value": "summanlp",
+      "matchesStarts": "642, 1171, 3171",
+      "count": 3,
+      "weight": 1
+    },
+    {
+      "value": "Chinese support",
+      "matchesStarts": "5377, 5745",
+      "count": 2,
+      "weight": 1
+    },
+    {
+      "value": "snapshot",
+      "matchesStarts": "2629, 5729",
+      "count": 2,
+      "weight": 1
+    },
+    {
+      "value": "TextRank work",
+      "matchesStarts": "1418",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "sentence extraction part",
+      "matchesStarts": "1470",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "text summarization system",
+      "matchesStarts": "381",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "first sentence",
+      "matchesStarts": "3625",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "Text Summarization",
+      "matchesStarts": "2238",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "text pre-processings",
+      "matchesStarts": "706",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "Japanese POS tag filter",
+      "matchesStarts": "5688",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "POS tag filter",
+      "matchesStarts": "5590",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "similarity measure",
+      "matchesStarts": "2948",
+      "count": 1,
+      "weight": 1
+    },
+    {
+      "value": "Jaccard similarity coefficient",
+      "matchesStarts": "3047",
+      "count": 1,
+      "weight": 1
+    }
+  ],
+  "sentences": [
+    {
+      "start": 1897,
+      "end": 2105,
+      "raw": ", with this in mind the similarity function should be oriented to the semantic of the sentence, cosine similarity based on a bag of words approach can work well and BM25/BM25+ work really nicely for TextRank.",
+      "sentenceIndex": 25,
+      "weight": 29,
+      "weight2": 8.71565262875587
+    },
+    {
+      "start": 3338,
+      "end": 3430,
+      "raw": "The graph constructed by TextRank (P1 S4 means the fourth sentence in the first paragraph) .",
+      "sentenceIndex": 45,
+      "weight": 26,
+      "weight2": 7.715652628755871
+    },
+    {
+      "start": 1731,
+      "end": 1805,
+      "raw": "it finds how similar each sentence is to all other sentences in the text .",
+      "sentenceIndex": 23,
+      "weight": 24,
+      "weight2": 7.122140888082342
+    },
+    {
+      "start": 2495,
+      "end": 2609,
+      "raw": "as an example to demonstrate the web interface and to visualize the associated internal graph created by TextRank.",
+      "sentenceIndex": 34,
+      "weight": 22,
+      "weight2": 6.638361536398522
+    },
+    {
+      "start": 4863,
+      "end": 5002,
+      "raw": "As TextRank is a fairly “old” algorithm by today’s standard, I wasn’t very sure how much efforts I need to put in to explain the algorithm.",
+      "sentenceIndex": 68,
+      "weight": 20,
+      "weight2": 6.1545821847147
+    },
+    {
+      "start": 666,
+      "end": 888,
+      "raw": "They all come with different flavors of text pre-processings (for example, PyTextRank uses parts-of-speech tags to filter tokens, while summanlp’s version uses a list of stopwords), and output only the extracted sentences.",
+      "sentenceIndex": 11,
+      "weight": 18,
+      "weight2": 6.044849795724993
+    },
+    {
+      "start": 3724,
+      "end": 3894,
+      "raw": "It implies that the ideas in that sentences had been (partly or fully) mentioned several times in the article, therefore it is most likely the centerpiece of the article.",
+      "sentenceIndex": 49,
+      "weight": 20,
+      "weight2": 5.935117406735285
+    },
+    {
+      "start": 642,
+      "end": 661,
+      "raw": "summanlp/textrank .",
+      "sentenceIndex": 10,
+      "weight": 17,
+      "weight2": 5.1545821847147
+    },
+    {
+      "start": 1171,
+      "end": 1190,
+      "raw": "summanlp/textrank .",
+      "sentenceIndex": 15,
+      "weight": 17,
+      "weight2": 5.1545821847147
+    },
+    {
+      "start": 2225,
+      "end": 2258,
+      "raw": "TextRank for Text Summarization .",
+      "sentenceIndex": 29,
+      "weight": 15,
+      "weight2": 5.1545821847147
+    },
+    {
+      "start": 3171,
+      "end": 3190,
+      "raw": "summanlp/textrank .",
+      "sentenceIndex": 42,
+      "weight": 17,
+      "weight2": 5.1545821847147
+    },
+    {
+      "start": 6086,
+      "end": 6167,
+      "raw": "“Variations of the Similarity Function of TextRank for Automated Summarization” .",
+      "sentenceIndex": 89,
+      "weight": 17,
+      "weight2": 5.1545821847147
+    },
+    {
+      "start": 605,
+      "end": 628,
+      "raw": "davidadamojr/TextRank .",
+      "sentenceIndex": 8,
+      "weight": 14,
+      "weight2": 4.1545821847147
+    },
+    {
+      "start": 1691,
+      "end": 1728,
+      "raw": "What TextRank does is very simple:  .",
+      "sentenceIndex": 22,
+      "weight": 14,
+      "weight2": 4.1545821847147
+    },
+    {
+      "start": 2176,
+      "end": 2215,
+      "raw": "Document Summarization using TextRank .",
+      "sentenceIndex": 27,
+      "weight": 14,
+      "weight2": 4.1545821847147
+    },
+    {
+      "start": 2263,
+      "end": 2359,
+      "raw": "Please refer to them, or even better, read the paper[1] if you want to know more about TextRank.",
+      "sentenceIndex": 30,
+      "weight": 14,
+      "weight2": 4.1545821847147
+    },
+    {
+      "start": 5832,
+      "end": 5871,
+      "raw": "“Textrank: Bringing order into texts” .",
+      "sentenceIndex": 83,
+      "weight": 14,
+      "weight2": 4.1545821847147
+    },
+    {
+      "start": 1815,
+      "end": 1894,
+      "raw": "The most important sentence is the one that is most similar to all the others .",
+      "sentenceIndex": 24,
+      "weight": 12,
+      "weight2": 3.561070444041171
+    },
+    {
+      "start": 2702,
+      "end": 2818,
+      "raw": "The texts were split into 10 sentences, so there are 10 x 9 / 2 = 45 potential undirected connetctions between them.",
+      "sentenceIndex": 36,
+      "weight": 12,
+      "weight2": 3.561070444041171
+    },
+    {
+      "start": 2819,
+      "end": 2943,
+      "raw": "Only 29 of them has a weight larger than 0 (i.e. the sentences at both end of the edges are somewhat similar to each other).",
+      "sentenceIndex": 37,
+      "weight": 12,
+      "weight2": 3.561070444041171
+    },
+    {
+      "start": 3989,
+      "end": 4050,
+      "raw": "The texts with the most two important sentences highlighted .",
+      "sentenceIndex": 52,
+      "weight": 12,
+      "weight2": 3.561070444041171
+    },
+    {
+      "start": 4083,
+      "end": 4141,
+      "raw": "The highlighted sentences very broadly defines Neo-Nazism.",
+      "sentenceIndex": 54,
+      "weight": 12,
+      "weight2": 3.561070444041171
+    },
+    {
+      "start": 4142,
+      "end": 4209,
+      "raw": "Terms used in them frequently overlap the terms in other sentences.",
+      "sentenceIndex": 55,
+      "weight": 12,
+      "weight2": 3.561070444041171
+    },
+    {
+      "start": 317,
+      "end": 438,
+      "raw": "The TextRank algorithm[1], which I also used as a baseline in a text summarization system, is a natural fit to this task.",
+      "sentenceIndex": 3,
+      "weight": 8,
+      "weight2": 3.1870234813470573
+    },
+    {
+      "start": 5067,
+      "end": 5209,
+      "raw": "The goal here is to provide a big picture and an example of how everything comes together for someone who is trying to quick build a baseline.",
+      "sentenceIndex": 70,
+      "weight": 8,
+      "weight2": 2.4837793516838214
+    },
+    {
+      "start": 47,
+      "end": 183,
+      "raw": "I’m trying to build a NLP system that can automatically highlight the important part of an article to help people to read long articles.",
+      "sentenceIndex": 1,
+      "weight": 8,
+      "weight2": 2.374046962694114
+    },
+    {
+      "start": 1442,
+      "end": 1565,
+      "raw": "We’re going to focus on the sentence extraction part of the TextRank algorithm (i.e. ignoring the keyword extraction part).",
+      "sentenceIndex": 19,
+      "weight": 5,
+      "weight2": 2.1870234813470573
+    }
+  ],
+  "url": "https://medium.com/the-artificial-impostor/use-textrank-to-extract-most-important-sentences-in-article-b8efc7e70b4"
+}

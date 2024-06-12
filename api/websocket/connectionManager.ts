@@ -1,22 +1,11 @@
-import { WebSocket } from 'ws';
-import { handleMessage } from './messageHandler';
 import {
   getAvailableEmbeddingModelProviders,
   getAvailableChatModelProviders,
 } from '../lib/providers';
 import { BaseChatModel } from '@langchain/core/language_models/chat_models';
 import type { Embeddings } from '@langchain/core/embeddings';
-import type { IncomingMessage } from 'http';
-import { logger } from 'hono/logger'
-
 import { ChatOpenAI } from '@langchain/openai';
 
-export const handleConnection = async (
-  ws: WebSocket,
-  request: IncomingMessage,
-) => {
-  try {
-    
     const searchParams = new URL(request.url, `http://${request.headers.host}`)
       .searchParams;
 
@@ -69,34 +58,3 @@ export const handleConnection = async (
         embeddingModel
       ] as Embeddings | undefined;
     }
-
-    if (!llm || !embeddings) {
-      ws.send(
-        JSON.stringify({
-          type: 'error',
-          data: 'Invalid LLM or embeddings model selected, please refresh the page and try again.',
-          key: 'INVALID_MODEL_SELECTED',
-        }),
-      );
-      ws.close();
-    }
-
-    ws.on(
-      'message',
-      async (message) =>
-        await handleMessage(message.toString(), ws, llm, embeddings),
-    );
-
-    ws.on('close', () => logger('Connection closed'));
-  } catch (err) {
-    ws.send(
-      JSON.stringify({
-        type: 'error',
-        data: 'Internal server error.',
-        key: 'INTERNAL_SERVER_ERROR',
-      }),
-    );
-    ws.close();
-    logger(err);
-  }
-};

@@ -4,6 +4,8 @@
 
 ## NexusAISearch.com 
 
+## 🚜 Tractor the Extractor
+
 * LangChain: Research, Extract, Vectorize, Semantic Compare, Rerank, Summarize, Answer, Follow-up
 * Save Page to Knowledge Base -- save main content of any webpage in your research browsing to build memory base for LLMs
 * Extract Content & Cite - extract main article text with formatted markup from HTML or URL (including youtube transcripts)
@@ -13,3 +15,5 @@
 
 
 #### Whatever the future of search can be, that is what it must become.
+
+[Automatic Summarization from TextRank to Transformers](https://blog.fastforwardlabs.com/2021/09/22/automatic-summarization-from-textrank-to-transformers.html)

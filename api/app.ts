@@ -1,5 +1,3 @@
-// import { startWebSocketServer } from './websocket';
-
 import configRouter from './routes/config';
 import imagesRouter from './routes/images';
 import videosRouter from './routes/videos';
@@ -14,6 +12,7 @@ import { prettyJSON } from 'hono/pretty-json'
 import { logger } from 'hono/logger'
 import { upgradeWebSocket } from 'hono/cloudflare-workers'
 import { serveStatic } from '@hono/node-server/serve-static'
+import { handleMessage } from './websocket/messageHandler';
 
 
 // app.use('/home/*', serveStatic({ root: '../ui/out' }))
@@ -46,13 +45,15 @@ app.get(
     return {
       async onMessage(event, ws) {
 
-        var message = event.data;
+        var message = event.data.toString();
 
-        // await handleMessage(message, ws, llm, embeddings)
+        
+
+        await handleMessage(message, ws)
 
         
         
-        console.log(`Message from client: ${event.data}`)
+        console.log(`Message from client: ${JSON.stringify(ws)}`)
         ws.send('Hello from server!')
 
 

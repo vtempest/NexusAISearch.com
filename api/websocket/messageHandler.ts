@@ -30,8 +30,8 @@ const searchHandlers = {
 export const handleMessage = async (
   message: string,
   ws: WebSocket,
-  llm: BaseChatModel,
-  embeddings: Embeddings,
+  // llm: BaseChatModel,
+  // embeddings: Embeddings,
 ) => {
   try {
     const parsedMessage = JSON.parse(message) as Message;
@@ -61,11 +61,12 @@ export const handleMessage = async (
     if (parsedMessage.type === 'message') {
       const handler = searchHandlers[parsedMessage.focusMode];
       if (handler) {
+        //call the focus agent function
         const emitter = handler(
           parsedMessage.content,
           history,
-          llm,
-          embeddings,
+          // llm,
+          // embeddings,
         );
         handleEmitterEvents(emitter, ws, id);
       } else {
