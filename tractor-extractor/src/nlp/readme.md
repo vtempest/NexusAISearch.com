@@ -3,10 +3,13 @@
 ## Further Reference  
 
 #### Software Library Docs
-https://github.com/janlukasschroeder/nlp-cheat-sheet-python/blob/master/README.md
-[NLP-Compromise](https://observablehq.com/@spencermountain/nlp-compromise) - Language tokenizer for part-of-speech, split sentences, dictionary, wiki, names. [Video Intro](https://vimeo.com/496095722)
 
-[CommonCrawl](https://commoncrawl.org/examples) - crawls and downloads the entire internet 100TB urls and html, and calculates domain rank for 100M domains. Well-funded nonprofit for open source public dataset.
+
+*   [NLP-Compromise](https://observablehq.com/@spencermountain/nlp-compromise) - Language tokenizer for part-of-speech, split sentences, dictionary, wiki, names. [Video Intro](https://vimeo.com/496095722)
+
+*   [CommonCrawl](https://commoncrawl.org/examples) - crawls and downloads the entire internet 100TB urls and html, and calculates domain rank for 100M domains. Well-funded nonprofit for open source public dataset.
+
+*   [NLP Algorithms Visualized](https://github.com/janlukasschroeder/nlp-cheat-sheet-python/blob/master/README.md)
 
 #### Research Papers
 
