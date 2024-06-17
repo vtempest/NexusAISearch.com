@@ -1,11 +1,11 @@
 import { parseHTML } from "linkedom";
-import { parseFullName } from "parse-full-name";
 import { parseDate } from "chrono-node";
 
-import extractAuthor from "./extract-author";
-import extractDate from "./extract-date";
-import {extractTitle, extractSource} from "./extract-cite-dom";
-import extractMetadata from "./extract-metadata";
+import extractAuthor from "./html-to-author";
+import extractDate from "./html-to-date";
+import extractSource from "./html-to-source";
+import extractTitle from "./html-to-title";
+import extractMetadata from "./metadata-to-cite";
 
 /**
  * Extract cite info from document using meta tags and common class names

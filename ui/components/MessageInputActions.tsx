@@ -55,8 +55,8 @@ const focusModes = [
     icon: (
       <SiYoutube
         className="h-5 w-auto mr-0.5"
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}
+        // onPointerEnterCapture={undefined}
+        // onPointerLeaveCapture={undefined}
       />
     ),
   },
@@ -67,8 +67,8 @@ const focusModes = [
     icon: (
       <SiReddit
         className="h-5 w-auto mr-0.5"
-        onPointerEnterCapture={undefined}
-        onPointerLeaveCapture={undefined}
+        // onPointerEnterCapture={undefined}
+        // onPointerLeaveCapture={undefined}
       />
     ),
   },

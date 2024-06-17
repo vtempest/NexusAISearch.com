@@ -1,0 +1,255 @@
+{
+  "url": "https://ora.ox.ac.uk/objects/uuid:44c386c4-5d9e-4ecf-a47c-9631a2a59747/files/mb5d6febf23502ea79f57c9be3516c4d3",
+  "html": "<h2> N : Average number of ancestor-simulations run by a posthuman civilization <p> H : Average number of individuals that have lived in a civilization before it reaches a posthuman stage </p><p> The actual fraction of all observers with human-type experiences that live in simulations is then </p><p> H H N f H N f f + = ) ( </p><p> Writing for the fraction of posthuman civilizations that are interested in running ancestor-simulations (or that contain at least some individuals who are interested in that and have sufficient resources to run a significant number of such simulations), and </p><p> for the average number of ancestor-simulations run by such interested civilizations, we have </p><p> 5 [ 5 ] N f N = </p><p> and thus: </p><p> 1 ) ( + = </p><p> Because of the immense computing power of posthuman civilizations, N is extremely large, as we saw in the previous section. By inspecting (*) we can then see that at least one of the following three propositions must be true: </p><p> (1) 0 &#x2248; f </p><p> (2) 0 &#x2248; f </p><p> (3) 1 &#x2248; f </p><p> V. A BLAND INDIFFERENCE PRINCIPLE </p><p> We can take a further step and conclude that conditional on the truth of (3), one&#x2019;s credence in the hypothesis that one is in a simulation should be close to unity. More generally, if we knew that a fraction x of all observers with human-type experiences live in simulations, and we don&#x2019;t have any information that indicate that our own particular experiences are any more or less likely than other human-type experiences to have been implemented in vivo rather than in machina , then our credence that we are in a simulation should equal x : </p><p> x x f SIM Cr = = ) | ( (#) </p><p> This step is sanctioned by a very weak indifference principle. Let us distinguish two cases. The first case, which is the easiest, is where all the minds in question are like your own in the sense that they are exactly qualitatively identical to yours: they have exactly the same information and the same experiences that you have. The second case is where the minds are &#x201C;like&#x201D; each other only in the loose sense of being the sort of minds that are typical of human creatures, but they are qualitatively distinct from one another and each has a distinct set of experiences. I maintain that even in the latter case, where the minds are qualitatively different, the simulation argument still works, provided that you have no information that bears on the question of which of the various minds are simulated and which are implemented biologically. </p><p> A detailed defense of a stronger principle, which implies the above stance for both cases as trivial special instances, has been given in the literature. Space does not permit a recapitulation of that defense here, but we can bring out one of the underlying intuitions by bringing to our attention to an analogous situation of a more familiar kind. Suppose </p><p> 6 [ 6 ] that x % of the population has a certain genetic sequence S within the part of their DNA commonly designated as &#x201C;junk DNA&#x201D;. Suppose, further, that there are no manifestations of S (short of what would turn up in a gene assay) and that there are no known correlations between having S and any observable characteristic. Then, quite clearly, unless you have had your DNA sequenced, it is rational to assign a credence of x % to the hypothesis that you have S . And this is so quite irrespective of the fact that the people who have S have qualitatively different minds and experiences from the people who don&#x2019;t have S . (They are different simply because all humans have different experiences from one another, not because of any known link between S and what kind of experiences one has.) </p><p> The same reasoning holds if S is not the property of having a certain genetic sequence but instead the property of being in a simulation, assuming only that we have no information that enables us to predict any differences between the experiences of simulated minds and those of the original biological minds. </p><p> It should be stressed that the bland indifference principle expressed by (#) prescribes indifference only between hypotheses about which observer you are, when you have no information about which of these observers you are. It does not in general prescribe indifference between hypotheses when you lack specific information about which of the hypotheses is true. In contrast to Laplacean and other more ambitious principles of indifference, it is therefore immune to Bertrand&#x2019;s paradox and similar predicaments that tend to plague indifference principles of unrestricted scope. </p><p> Readers familiar with the Doomsday argument may worry that the bland principle of indifference invoked here is the same assumption that is responsible for getting the Doomsday argument off the ground, and that the counterintuitiveness of some of the implications of the latter incriminates or casts doubt on the validity of the former. This is not so. The Doomsday argument rests on a much stronger and more controversial premiss, namely that one should reason as if one were a random sample from the set of all people who will ever have lived (past, present, and future) even though we know that we are living in the early twenty-first century rather than at some point in the distant past or the future. The bland indifference principle, by contrast, applies only to cases where we have no information about which group of people we belong to. </p><p> If betting odds provide some guidance to rational belief, it may also be worth to ponder that if everybody were to place a bet on whether they are in a simulation or not, then if people use the bland principle of indifference, and consequently place their money on being in a simulation if they know that that&#x2019;s where almost all people are, then almost everyone will win their bets. If they bet on not being in a simulation, then almost everyone will lose. It seems better that the bland indifference principle be heeded. </p><p> Further, one can consider a sequence of possible situations in which an increasing fraction of all people live in simulations: 98%, 99%, 99.9%, 99.9999%, and so on. As one approaches the limiting case in which everybody is in a simulation (from which one can </p><p> deductively infer that one is in a simulation oneself), it is plausible to require that the credence one assigns to being in a simulation gradually approach the limiting case of complete certainty in a matching manner. </p><p> VI. INTERPRETATION </p><p> 7 [ 7 ] The possibility represented by proposition (1) is fairly straightforward. If (1) is true, then humankind will almost certainly fail to reach a posthuman level; for virtually no species at our level of development become posthuman, and it is hard to see any justification for thinking that our own species will be especially privileged or protected from future disasters. Conditional on (1), therefore, we must give a high credence to DOOM , the hypothesis that humankind will go extinct before reaching a posthuman level: </p><p> 1 ) 1 | ( &#x2248; &#x2248; f DOOM Cr </p><p> One can imagine hypothetical situations were we have such evidence as would trump knowledge of . For example, if we discovered that we were about to be hit by a giant meteor, this might suggest that we had been exceptionally unlucky. We could then assign a credence to DOOM larger than our expectation of the fraction of human-level civilizations that fail to reach posthumanity. In the actual case, however, we seem to lack evidence for thinking that we are special in this regard, for better or worse. </p><p> Proposition (1) doesn&#x2019;t by itself imply that we are likely to go extinct soon, only that we are unlikely to reach a posthuman stage. This possibility is compatible with us remaining at, or somewhat above, our current level of technological development for a long time before going extinct. Another way for (1) to be true is if it is likely that technological civilization will collapse. Primitive human societies might then remain on Earth indefinitely. </p><p> There are many ways in which humanity could become extinct before reaching posthumanity. Perhaps the most natural interpretation of (1) is that we are likely to go extinct as a result of the development of some powerful but dangerous technology. One candidate is molecular nanotechnology, which in its mature stage would enable the construction of self-replicating nanobots capable of feeding on dirt and organic matter &#x2013; a kind of mechanical bacteria. Such nanobots, designed for malicious ends, could cause the extinction of all life on our planet. </p><p> The second alternative in the simulation argument&#x2019;s conclusion is that the fraction of posthuman civilizations that are interested in running ancestor-simulation is negligibly small. In order for (2) to be true, there must be a strong convergence among the courses of advanced civilizations. If the number of ancestor-simulations created by the interested civilizations is extremely large, the rarity of such civilizations must be correspondingly extreme. Virtually no posthuman civilizations decide to use their resources to run large numbers of ancestor-simulations. Furthermore, virtually all posthuman civilizations lack individuals who have sufficient resources and interest to run ancestor-simulations; or else they have reliably enforced laws that prevent such individuals from acting on their desires. </p><p> 8 [ 8 ] What force could bring about such convergence? One can speculate that advanced civilizations all develop along a trajectory that leads to the recognition of an ethical prohibition against running ancestor-simulations because of the suffering that is inflicted on the inhabitants of the simulation. However, from our present point of view, it is not clear that creating a human race is immoral. On the contrary, we tend to view the existence of our race as constituting a great ethical value. Moreover, convergence on an ethical view of the immorality of running ancestor-simulations is not enough: it must be combined with convergence on a civilization-wide social structure that enables activities considered immoral to be effectively banned. </p><p> Another possible convergence point is that almost all individual posthumans in virtually all posthuman civilizations develop in a direction where they lose their desires to run ancestor-simulations. This would require significant changes to the motivations driving their human predecessors, for there are certainly many humans who would like to run ancestor-simulations if they could afford to do so. But perhaps many of our human desires will be regarded as silly by anyone who becomes a posthuman. Maybe the scientific value of ancestor-simulations to a posthuman civilization is negligible (which is not too implausible given its unfathomable intellectual superiority), and maybe posthumans regard recreational activities as merely a very inefficient way of getting pleasure &#x2013; which can be obtained much more cheaply by direct stimulation of the brain&#x2019;s reward centers. One conclusion that follows from (2) is that posthuman societies will be very different from human societies: they will not contain relatively wealthy independent agents who have the full gamut of human-like desires and are free to act on them. </p><p> The possibility expressed by alternative (3) is the conceptually most intriguing one. If we are living in a simulation, then the cosmos that we are observing is just a tiny piece of the totality of physical existence. The physics in the universe where the computer is situated that is running the simulation may or may not resemble the physics of the world that we observe. While the world we see is in some sense &#x201C;real&#x201D;, it is not located at the fundamental level of reality. </p><p> It may be possible for simulated civilizations to become posthuman. They may then run their own ancestor-simulations on powerful computers they build in their simulated universe. Such computers would be &#x201C;virtual machines&#x201D;, a familiar concept in computer science. (Java script web-applets, for instance, run on a virtual machine &#x2013; a simulated computer &#x2013; inside your desktop.) Virtual machines can be stacked: it&#x2019;s possible to simulate a machine simulating another machine, and so on, in arbitrarily many steps of iteration. If we do go on to create our own ancestor-simulations, this would be strong evidence against (1) and (2), and we would therefore have to conclude that we live in a simulation. Moreover, we would have to suspect that the posthumans running our simulation are themselves simulated beings; and their creators, in turn, may also be simulated beings. </p><p> Reality may thus contain many levels. Even if it is necessary for the hierarchy to bottom out at some stage &#x2013; the metaphysical status of this claim is somewhat obscure &#x2013; there may be room for a large number of levels of reality, and the number could be increasing over time. (One consideration that counts against the multi-level hypothesis is that the computational cost for the basement-level simulators would be very great. Simulating even a single posthuman civilization might be prohibitively expensive. If so, </p><p> 9 [ 9 ] then we should expect our simulation to be terminated when we are about to become posthuman.) </p><p> Although all the elements of such a system can be naturalistic, even physical, it is possible to draw some loose analogies with religious conceptions of the world. In some ways, the posthumans running a simulation are like gods in relation to the people inhabiting the simulation: the posthumans created the world we see; they are of superior intelligence; they are &#x201C;omnipotent&#x201D; in the sense that they can interfere in the workings of our world even in ways that violate its physical laws; and they are &#x201C;omniscient&#x201D; in the sense that they can monitor everything that happens. However, all the demigods except those at the fundamental level of reality are subject to sanctions by the more powerful gods living at lower levels. </p><p> Further rumination on these themes could climax in a naturalistic theogony that would study the structure of this hierarchy, and the constraints imposed on its inhabitants by the possibility that their actions on their own level may affect the treatment they receive from dwellers of deeper levels. For example, if nobody can be sure that they are at the basement-level, then everybody would have to consider the possibility that their actions will be rewarded or punished, based perhaps on moral criteria, by their simulators. An afterlife would be a real possibility. Because of this fundamental uncertainty, even the basement civilization may have a reason to behave ethically. The fact that it has such a reason for moral behavior would of course add to everybody else&#x2019;s reason for behaving morally, and so on, in truly virtuous circle. One might get a kind of universal ethical imperative, which it would be in everybody&#x2019;s self-interest to obey, as it were &#x201C;from nowhere&#x201D;. </p><p> In addition to ancestor-simulations, one may also consider the possibility of more selective simulations that include only a small group of humans or a single individual. The rest of humanity would then be zombies or &#x201C;shadow-people&#x201D; &#x2013; humans simulated only at a level sufficient for the fully simulated people not to notice anything suspicious. It is not clear how much cheaper shadow-people would be to simulate than real people. It is not even obvious that it is possible for an entity to behave indistinguishably from a real human and yet lack conscious experience. Even if there are such selective simulations, you should not think that you are in one of them unless you think they are much more numerous than complete simulations. There would have to be about 100 billion times as many &#x201C;me-simulations&#x201D; (simulations of the life of only a single mind) as there are ancestor-simulations in order for most simulated persons to be in me-simulations. </p><p> There is also the possibility of simulators abridging certain parts of the mental lives of simulated beings and giving them false memories of the sort of experiences that they would typically have had during the omitted interval. If so, one can consider the following (farfetched) solution to the problem of evil: that there is no suffering in the world and all memories of suffering are illusions. Of course, this hypothesis can be seriously entertained only at those times when you are not currently suffering. </p><p> Supposing we live in a simulation, what are the implications for us humans? The foregoing remarks notwithstanding, the implications are not all that radical. Our best guide to how our posthuman creators have chosen to set up our world is the standard empirical study of the universe we see. The revisions to most parts of our belief networks would be rather slight and subtle &#x2013; in proportion to our lack of confidence in our ability to understand the ways of posthumans. Properly understood, therefore, the truth of (3) </p><p> 10 [ 10 ] should have no tendency to make us &#x201C;go crazy&#x201D; or to prevent us from going about our business and making plans and predictions for tomorrow. The chief empirical importance of (3) at the current time seems to lie in its role in the tripartite conclusion established above. We may hope that (3) is true since that would decrease the probability of (1), although if computational constraints make it likely that simulators would terminate a simulation before it reaches a posthuman level, then out best hope would be that (2) is true. </p><p> If we learn more about posthuman motivations and resource constraints, maybe as a result of developing towards becoming posthumans ourselves, then the hypothesis that we are simulated will come to have a much richer set of empirical implications. </p><p> VII. CONCLUSION </p><p> A technologically mature &#x201C;posthuman&#x201D; civilization would have enormous computing power. Based on this empirical fact, the simulation argument shows that at least one of the following propositions is true: (1) The fraction of human-level civilizations that reach a posthuman stage is very close to zero; (2) The fraction of posthuman civilizations that are interested in running ancestor-simulations is very close to zero; (3) The fraction of all people with our kind of experiences that are living in a simulation is very close to one. </p><p> If (1) is true, then we will almost certainly go extinct before reaching posthumanity. If (2) is true, then there must be a strong convergence among the courses of advanced civilizations so that virtually none contains any relatively wealthy individuals who desire to run ancestor-simulations and are free to do so. If (3) is true, then we almost certainly live in a simulation. In the dark forest of our current ignorance, it seems sensible to apportion one&#x2019;s credence roughly evenly between (1), (2), and (3). </p><p> Unless we are now living in a simulation, our descendants will almost certainly never run an ancestor-simulation. </p><p> Acknowledgements </p><p> I&#x2019;m grateful to many people for comments, and especially to Amara Angelica, Robert Bradbury, Milan Cirkovic, Robin Hanson, Hal Finney, Robert A. Freitas Jr., John Leslie, Mitch Porter, Keith DeRose, Mike Treder, Mark Walker, Eliezer Yudkowsky, and the anonymous referees. </p><p> 11 [ 11 ] </p><small>[Published in Philosophical Quarterly (2003) Vol. 53, No. 211, pp. 243-255. (First version: 2001)] 1 1 See e.g. K. E. Drexler, Engines of Creation: The Coming Era of Nanotechnology , London, Forth Estate, 1985; N. Bostrom, &#x201C;How Long Before Superintelligence&#x201D; International Journal of Futures Studies, vol. 2, (1998); R. Kurzweil, The Age of Spiritual Machines: When computers exceed human intelligence , New 2 21 3 42 4 50 31 5 14 6 16 17 7 York, Viking Press, 1999; H. Moravec, Robot: Mere Machine to Transcendent Mind , Oxford University Press, 1999. 2 Such as the Bremermann-Bekenstein bound and the black hole limit (H. J. Bremermann, &#x201C;Minimum energy requirements of information transfer and computing.&#x201D; International Journal of Theoretical Physics 21: 203-217 (1982); J. D. Bekenstein, &#x201C;Entropy content and information flow in systems with limited energy.&#x201D; Physical Review D 30: 1669-1679 (1984); A. Sandberg, &#x201C;The Physics of Information Processing Superobjects: The Daily Life among the Jupiter Brains.&#x201D; Journal of Evolution and Technology , vol. 5 (1999)). 3 K. E. Drexler, Nanosystems: Molecular Machinery, Manufacturing, and Computation , New York, John Wiley &amp; Sons, Inc., 1992. 4 R. J. Bradbury, &#x201C;Matrioshka Brains.&#x201D; Working manuscript (2002), http://www.aeiveos.com/~bradbury/MatrioshkaBrains/MatrioshkaBrains.html. 5 S. Lloyd, &#x201C;Ultimate physical limits to computation.&#x201D; Nature 406 (31 August): 1047-1054 (2000). 6 H. Moravec, Mind Children , Harvard University Press (1989). 7 Bostrom (1998), op. cit. 8 8 9 33 36 10 8 See references in foregoing footnotes. 9 As we build more and faster computers, the cost of simulating our machines might eventually come to dominate the cost of simulating nervous systems. 10 100 billion humans 50 years/human 30 million secs/year [10 14 , 10 17 ] operations in each human brain per second [10 33 , 10 36 ] operations. 42 P P P sim I I I I I I P I I P sim I P I sim sim 11 11 In e.g. N. Bostrom, &#x201C;The Doomsday argument, Adam &amp; Eve, UN ++ , and Quantum Joe.&#x201D; Synthese 127(3): 359-387 (2001); and most fully in my book Anthropic Bias: Observation Selection Effects in Science and Philosophy , Routledge, New York, 2002. 12 12 See e.g. J. Leslie, &#x201C;Is the End of the World Nigh &#x201D; Philosophical Quarterly 40, 158: 65-72 (1990). P P 13 14 13 See my paper &#x201C;Existential Risks: Analyzing Human Extinction Scenarios and Related Hazards.&#x201D; Journal of Evolution and Technology, vol. 9 (2001) for a survey and analysis of the present and anticipated future threats to human survival. 14 See e.g. Drexler (1985) op cit., and R. A. Freitas Jr., &#x201C;Some Limits to Global Ecophagy by Biovorous Nanoreplicators, with Public Policy Recommendations.&#x201D; Zyvex preprint April (2000), http://www.foresight.org/NanoRev/Ecophagy.html. 15 <p>15 For some reflections by another author on the consequences of (3), which were sparked by a privately circulated earlier version of this paper, see R. Hanson, &#x201C;How to Live in a Simulation.&#x201D; Journal of Evolution and Technology , vol. 7 (2001). </p></small></h2>",
+  "image": null,
+  "word_count": 3630,
+  "keyphrases": [
+    {
+      "keyphrase": "ancestor simulations",
+      "sentences": [
+        0,
+        47,
+        50,
+        98,
+        41,
+        71,
+        43,
+        44,
+        45,
+        51,
+        52,
+        54,
+        61,
+        64,
+        79,
+        84,
+        100,
+        6,
+        25,
+        103,
+        83
+      ],
+      "words": 3,
+      "weight": 33.333333333333336
+    },
+    {
+      "keyphrase": "fraction of posthuman civilizations",
+      "sentences": [
+        0,
+        41,
+        98,
+        31,
+        54,
+        69,
+        44,
+        45,
+        51,
+        28,
+        29,
+        94,
+        33,
+        55,
+        70,
+        90,
+        95
+      ],
+      "words": 4,
+      "weight": 25.25
+    },
+    {
+      "keyphrase": "fraction of human level",
+      "sentences": [
+        31,
+        98,
+        0,
+        41
+      ],
+      "words": 4,
+      "weight": 14.25
+    },
+    {
+      "keyphrase": "running ancestor",
+      "sentences": [
+        0,
+        41,
+        47,
+        50,
+        98,
+        103,
+        65
+      ],
+      "words": 2,
+      "weight": 13
+    },
+    {
+      "keyphrase": "fraction of all people",
+      "sentences": [
+        24,
+        98,
+        0,
+        41,
+        31
+      ],
+      "words": 4,
+      "weight": 11.75
+    }
+  ],
+  "sorted_sentences": [
+    {
+      "text": "Based on this empirical fact, the simulation argument shows that at least one of the following propositions is true: (1) The fraction of human-level civilizations that reach a posthuman stage is very close to zero; (2) The fraction of posthuman civilizations that are interested in running ancestor-simulations is very close to zero; (3) The fraction of all people with our kind of experiences that are living in a simulation is very close to one.",
+      "index": 98,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "fraction of posthuman civilizations",
+          "weight": 25.25
+        },
+        {
+          "keyphrase": "fraction of human level",
+          "weight": 14.25
+        },
+        {
+          "keyphrase": "running ancestor",
+          "weight": 13
+        },
+        {
+          "keyphrase": "fraction of all people",
+          "weight": 11.75
+        }
+      ],
+      "weight": 487
+    },
+    {
+      "text": "N : Average number of ancestor-simulations run by a posthuman civilization   H : Average number of individuals that have lived in a civilization before it reaches a posthuman stage    The actual fraction of all observers with human-type experiences that live in simulations is then    H H N f H N f f + = ) (    Writing for the fraction of posthuman civilizations that are interested in running ancestor-simulations (or that contain at least some individuals who are interested in that and have sufficient resources to run a significant number of such simulations), and    for the average number of ancestor-simulations run by such interested civilizations, we have    5 [ 5 ] N f N =    and thus:    1 ) ( + =    Because of the immense computing power of posthuman civilizations, N is extremely large, as we saw in the previous section.",
+      "index": 0,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "fraction of posthuman civilizations",
+          "weight": 25.25
+        },
+        {
+          "keyphrase": "fraction of human level",
+          "weight": 14.25
+        },
+        {
+          "keyphrase": "running ancestor",
+          "weight": 13
+        },
+        {
+          "keyphrase": "fraction of all people",
+          "weight": 11.75
+        }
+      ],
+      "weight": 482
+    },
+    {
+      "text": "Maybe the scientific value of ancestor-simulations to a posthuman civilization is negligible (which is not too implausible given its unfathomable intellectual superiority), and maybe posthumans regard recreational activities as merely a very inefficient way of getting pleasure &#x2013; which can be obtained much more cheaply by direct stimulation of the brain&#x2019;s reward centers.",
+      "index": 54,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "fraction of posthuman civilizations",
+          "weight": 25.25
+        }
+      ],
+      "weight": 475
+    },
+    {
+      "text": "Virtually no posthuman civilizations decide to use their resources to run large numbers of ancestor-simulations.",
+      "index": 44,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "fraction of posthuman civilizations",
+          "weight": 25.25
+        }
+      ],
+      "weight": 469
+    },
+    {
+      "text": "The second alternative in the simulation argument&#x2019;s conclusion is that the fraction of posthuman civilizations that are interested in running ancestor-simulation is negligibly small.",
+      "index": 41,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "fraction of posthuman civilizations",
+          "weight": 25.25
+        },
+        {
+          "keyphrase": "fraction of human level",
+          "weight": 14.25
+        },
+        {
+          "keyphrase": "running ancestor",
+          "weight": 13
+        },
+        {
+          "keyphrase": "fraction of all people",
+          "weight": 11.75
+        }
+      ],
+      "weight": 462
+    },
+    {
+      "text": "Another possible convergence point is that almost all individual posthumans in virtually all posthuman civilizations develop in a direction where they lose their desires to run ancestor-simulations.",
+      "index": 51,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "fraction of posthuman civilizations",
+          "weight": 25.25
+        }
+      ],
+      "weight": 456
+    },
+    {
+      "text": "Furthermore, virtually all posthuman civilizations lack individuals who have sufficient resources and interest to run ancestor-simulations; or else they have reliably enforced laws that prevent such individuals from acting on their desires.",
+      "index": 45,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "fraction of posthuman civilizations",
+          "weight": 25.25
+        }
+      ],
+      "weight": 444
+    },
+    {
+      "text": "One can speculate that advanced civilizations all develop along a trajectory that leads to the recognition of an ethical prohibition against running ancestor-simulations because of the suffering that is inflicted on the inhabitants of the simulation.",
+      "index": 47,
+      "keyphrases": [
+        {
+          "keyphrase": "ancestor simulations",
+          "weight": 33.333333333333336
+        },
+        {
+          "keyphrase": "running ancestor",
+          "weight": 13
+        }
+      ],
+      "weight": 323
+    }
+  ]
+}

@@ -37,13 +37,12 @@ export const searchSearxng = async (
     });
   }
 
-
   var res = await (await fetch(url.toString())).json() ;
 
-
   const results: SearxngSearchResult[] = res?.results;
+
   const suggestions: string[] = res?.suggestions;
 
-
   return { results, suggestions };
+
 };

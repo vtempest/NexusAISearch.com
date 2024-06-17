@@ -1,3 +1,24 @@
+
+# SearXNG scrapes 30+ engines for mixed results, autocomplete, infoboxes, and 10+
+#  categories: news, images, video, maps, peer-to-peer science papers, torrents.
+
+# MediaWiki Engine, Anna’s Archive, Arch Linux, Bing Engines, Bpb, Brave Engines, 
+# BT4G, Dailymotion, Discourse Forums, DuckDuckGo Engines, Gitea, Google Engines,
+# Lemmy, Library of Congress, Mastodon, Moviepilot, Matrix Rooms Search (MRS), 
+# Mullvad-Leta, Mwmbl Engine, Odysee, Peertube Engines, Piped, Presearch Engine, 
+# Qwant, RadioBrowser, Recoll Engine, Seekr Engines, Startpage Engines, 
+# Tagesschau API, Torznab WebAPI, Void Linux binary packages, Wallhaven, 
+# Wikimedia, Yacy, Yahoo Engine, Z-Library
+
+
+
+# https://docs.searxng.org/admin/installation-scripts.html
+# git clone https://github.com/searxng/searxng.git searxng
+# cd searxng
+# sudo -H ./utils/searxng.sh install all
+# sudo -H ./utils/searxng.sh install nginx
+
+
 general:
   # Debug mode, only for development. Is overwritten by ${SEARXNG_DEBUG}
   debug: false

@@ -18,7 +18,7 @@ export type Message = {
   sources?: Document[];
 };
 
-const useSocket = (url: string, setIsReady: (ready: boolean) => void) => {
+const useSocket = (url: string, setIsReady: any) => {
   const [ws, setWs] = useState<WebSocket | null>(null);
 
   useEffect(() => {
@@ -185,6 +185,7 @@ const ChatWindow = () => {
     ]);
 
     const messageHandler = async (e: MessageEvent) => {
+      
       const data = JSON.parse(e.data);
 
       if (data.type === 'error') {

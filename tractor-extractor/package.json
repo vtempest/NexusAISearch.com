@@ -1,12 +1,11 @@
 {
   "dependencies": {
-    "@mozilla/readability": "^0.5.0",
     "@postlight/parser": "^2.2.3",
     "chrono-node": "^2.7.6",
+    "compromise": "^14.13.0",
+    "compromise-stats": "^0.1.0",
     "linkedom": "^0.18.2",
-    "node-html-markdown": "^1.3.0",
     "pdfjs-dist": "^4.3.136",
-    "sanitize-html": "^2.13.0",
     "tldts": "^6.1.24",
     "youtube-transcript": "^1.2.1"
   },
@@ -17,6 +16,7 @@
     "vitest": "^1.6.0"
   },
   "scripts": {
-    "test": "vitest --ui"
+    "test": "vitest ",
+    "test-ui": "vitest --ui"
   }
 }
